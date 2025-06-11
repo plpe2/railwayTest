@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const conn = await getConnection();
-    const [rows] = await conn.query('SELECT * FROM users');
+    const [rows] = await conn.query('SELECT * FROM user_tbl');
     return NextResponse.json(rows);
   } catch (error) {
     console.error('DB error:', error);
